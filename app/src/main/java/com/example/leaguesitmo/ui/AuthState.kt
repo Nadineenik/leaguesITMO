@@ -2,6 +2,7 @@ package com.example.leaguesitmo.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.leaguesitmo.data.User
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -9,7 +10,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import nadinee.studentmaterialssearch.data.User
+
 
 class AuthState : ViewModel() {
     private val _currentUser = MutableStateFlow<User?>(null)
