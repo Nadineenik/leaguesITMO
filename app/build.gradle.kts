@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -71,4 +73,12 @@ dependencies {
 
     // Compose ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
+
+    implementation("androidx.navigation:navigation-compose:2.9.5")
+
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+
+    kapt("androidx.room:room-compiler:2.6.1")
+
 }
