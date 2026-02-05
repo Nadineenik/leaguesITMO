@@ -15,6 +15,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.*
 import androidx.navigation.compose.*
+import com.example.leaguesitmo.ui.DetailScreen
+import com.example.leaguesitmo.ui.FiltersScreen
+import com.example.leaguesitmo.ui.HistoryScreen
+import com.example.leaguesitmo.ui.LoginScreen
 import com.example.leaguesitmo.ui.MainScreen
 import kotlinx.coroutines.flow.collectLatest
 //import nadinee.studentmaterialssearch.screens.*
@@ -90,7 +94,7 @@ fun SetupNavGraph(
             ) { backStackEntry ->
                 val encodedUrl = backStackEntry.arguments?.getString("url") ?: ""
                 val url = try { URLDecoder.decode(encodedUrl, "UTF-8") } catch (e: Exception) { encodedUrl }
-                DetailsScreen(navController = navController, authState = authState)
+                DetailScreen(navController = navController, authState = authState)
             }
 
 

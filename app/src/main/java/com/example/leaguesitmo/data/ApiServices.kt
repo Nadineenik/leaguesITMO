@@ -8,16 +8,16 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("endpoint")
+    @GET("leagues")
     suspend fun getItems(
         @Header("Authorization") token: String
     ): List<LeaguesDto>
 
-    @GET("teams/{id}")
-    suspend fun getTeam(
+    @GET("games/{id}")
+    suspend fun getGame(
         @Path("id") id: Int
     )
-    @GET("stats")
+    @GET("games")
     suspend fun getStats(
         @Query("season") season: Int,
         @Query("team") teamId: Int
