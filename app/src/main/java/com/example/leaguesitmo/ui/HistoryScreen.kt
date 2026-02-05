@@ -1,4 +1,6 @@
 package com.example.leaguesitmo.ui
 
-class HistoryScreen {
+import androidx.navigation.NavController
+
+class HistoryScreen(navController: NavController) {
 }

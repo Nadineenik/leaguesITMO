@@ -1,4 +1,6 @@
 package com.example.leaguesitmo.ui
 
-class FiltersScreen {
+import androidx.navigation.NavController
+
+class FiltersScreen(navController: NavController) {
 }

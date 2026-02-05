@@ -1,4 +1,5 @@
 package com.example.leaguesitmo.ui
 
-class LoginScreen {
+class LoginScreen(    authState: AuthState,
+                      onLoginSuccess: () -> Unit) {
 }

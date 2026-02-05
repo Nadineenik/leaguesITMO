@@ -1,4 +1,6 @@
 package com.example.leaguesitmo.ui
 
-class DetailScreen {
+import androidx.navigation.NavController
+
+class DetailScreen(navController: NavController) {
 }

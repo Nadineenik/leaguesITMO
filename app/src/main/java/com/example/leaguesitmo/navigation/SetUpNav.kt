@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.*
 import androidx.navigation.compose.*
 import com.example.leaguesitmo.ui.DetailScreen
@@ -20,6 +21,7 @@ import com.example.leaguesitmo.ui.FiltersScreen
 import com.example.leaguesitmo.ui.HistoryScreen
 import com.example.leaguesitmo.ui.LoginScreen
 import com.example.leaguesitmo.ui.MainScreen
+import com.example.leaguesitmo.ui.MainViewModel
 import kotlinx.coroutines.flow.collectLatest
 //import nadinee.studentmaterialssearch.screens.*
 import java.net.URLDecoder
@@ -80,11 +82,11 @@ fun SetupNavGraph(
             }
 
             composable(Screen.Main.route) {
-                MainScreen(navController = navController, authState = authState)
+                MainScreen(viewModel = viewModel(), navController = navController)
             }
 
             composable(Screen.Filters.route) {
-                FiltersScreen(navController = navController, authState = authState)
+                FiltersScreen(navController = navController)
             }
 
 
@@ -94,12 +96,12 @@ fun SetupNavGraph(
             ) { backStackEntry ->
                 val encodedUrl = backStackEntry.arguments?.getString("url") ?: ""
                 val url = try { URLDecoder.decode(encodedUrl, "UTF-8") } catch (e: Exception) { encodedUrl }
-                DetailScreen(navController = navController, authState = authState)
+                DetailScreen(navController = navController)
             }
 
 
             composable(Screen.History.route) {
-                HistoryScreen(navController = navController, authState = authState)
+                HistoryScreen(navController = navController)
             }
         }
     }
