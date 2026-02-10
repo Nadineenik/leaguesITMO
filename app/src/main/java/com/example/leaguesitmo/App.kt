@@ -1,5 +1,5 @@
+// App.kt - добавляем fallbackToDestructiveMigration, если не было, и повышаем версию в @Database ниже
 package com.example.leaguesitmo
-
 
 import android.app.Application
 import androidx.room.Room
@@ -11,7 +11,6 @@ import com.example.leaguesitmo.data.AppDatabase
 class App : Application() {
     companion object {
         val database: AppDatabase by lazy {
-            // Это выполнится при первом обращении
             Room.databaseBuilder(
                 instance.applicationContext,
                 AppDatabase::class.java,
@@ -29,9 +28,8 @@ class App : Application() {
         super.onCreate()
         instance = this
 
-        // Предзагрузка (опционально)
         GlobalScope.launch(Dispatchers.IO) {
-            database // просто вызов, чтобы инициализировать
+            database // инициализируем
         }
     }
 }
